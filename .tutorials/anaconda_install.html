@@ -1,0 +1,54 @@
+<h1>Installing Anaconda Python and Creating a Python Environment</h1>
+
+<div class="section">
+    <h2>1. Installing Anaconda Python</h2>
+
+    <h3>On Windows</h3>
+    <ol>
+        <li>Download the Anaconda installer from the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda website</a>.</li>
+        <li>Run the downloaded installer (.exe file).</li>
+        <li>Follow the prompts in the installation wizard. Choose "Add Anaconda to my PATH environment variable" and click "Install".</li>
+        <li>After the installation is complete, open the Anaconda Prompt from the Start Menu.</li>
+    </ol>
+
+    <h3>On macOS</h3>
+    <ol>
+        <li>Download the Anaconda installer from the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda website</a>.</li>
+        <li>Open the Terminal and navigate to the directory where the installer was downloaded.</li>
+        <li>Run the installer with the following command:
+            <pre><code>bash Anaconda3-2024.05-MacOSX-x86_64.sh</code></pre>
+        </li>
+        <li>Follow the prompts in the Terminal to complete the installation.</li>
+        <li>Close and reopen the Terminal, or run `source ~/.bash_profile` to activate the Anaconda environment.</li>
+    </ol>
+
+    <h3>On Ubuntu</h3>
+    <ol>
+        <li>Download the Anaconda installer from the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda website</a>.</li>
+        <li>Open the Terminal and navigate to the directory where the installer was downloaded.</li>
+        <li>Run the installer with the following command:
+            <pre><code>bash Anaconda3-2024.05-Linux-x86_64.sh</code></pre>
+        </li>
+        <li>Follow the prompts in the Terminal to complete the installation.</li>
+        <li>Close and reopen the Terminal, or run `source ~/.bashrc` to activate the Anaconda environment.</li>
+    </ol>
+</div>
+
+<div class="section">
+    <h2>2. Creating a Python Environment</h2>
+    <ol>
+        <li>Open your terminal (or Anaconda Prompt on Windows).</li>
+        <li>Create a new environment with a specific Python version by running:
+            <pre><code>conda create --name myenv python=3.8</code></pre>
+            Replace `myenv` with your desired environment name and `3.8` with your desired Python version.</li>
+        <li>Activate the newly created environment:
+            <pre><code>conda activate myenv</code></pre>
+        </li>
+        <li>To install packages in this environment, use:
+            <pre><code>conda install package_name</code></pre>
+            Replace `package_name` with the name of the package you want to install.</li>
+        <li>To deactivate the environment, simply run:
+            <pre><code>conda deactivate</code></pre>
+        </li>
+    </ol>
+</div>

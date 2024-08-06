@@ -71,11 +71,17 @@
                 width: 100%;
             }
         }
+        .profile_photo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%
+        }
     </style>
 </head>
 <body>
     <div class="sidebar">
-        <img src="./.images/photo.png" alt="Bruno Saraiva">
+        <img src="./.images/photo.png" alt="Bruno Saraiva" class="profile_photo">
         <h2>Bruno Saraiva</h2>
         <p>Hello everyone, Welcome to my personal CV webpage!</p>
         <p>Contact: bruno.msaraiva2@gmail.com</p>
@@ -86,6 +92,7 @@
             <a href="#" onclick="loadHTML('working_experience.html')">Working Experience</a>
             <a href="#" onclick="loadHTML('publications.html')">Publications</a>
             <a href="#" onclick="loadHTML('awards.html')">Awards</a>
+            <a href="#" onclick="loadHTML('tutorials.html')">Tutorials</a>
         </div>
         <div id="content">
             <!-- Initial content will be loaded here -->
@@ -115,6 +122,25 @@
                     document.getElementById('content').innerHTML = `<p>Error loading content. Please try again later.</p>`;
                 });
         }
+
+        function load_tutorials(file) {
+        console.log('Fetching:', file);
+        fetch(file)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(html => {
+                console.log('HTML content:', html);
+                document.getElementById('content_tutorials').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error loading HTML file:', error);
+                document.getElementById('content_tutorials').innerHTML = `<p>Error loading content. Please try again later.</p>`;
+            });
+    }
     </script>
 </body>
 </html>
